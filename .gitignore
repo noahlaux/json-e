@@ -49,5 +49,13 @@ dist/
 src/gopkg.in
 src/github.com
 
+
 #python env file
 env
+
+#Added by cargo
+#
+#already existing elements are commented out
+
+/target
+**/*.rs.bk
