@@ -11,7 +11,7 @@ class SyntaxError(TemplateError):
     @classmethod
     def unexpected(cls, got, exp):
         exp = ', '.join(sorted(exp))
-        return cls('Found {}, expected {}'.format(got.value, exp))
+        return cls('Found: {} token, expected one of: {}'.format(got.value, exp))
 
 
 Token = namedtuple('Token', ['kind', 'value', 'start', 'end'])

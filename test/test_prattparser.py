@@ -104,8 +104,8 @@ def test_parser():
             eq_(str(exc), "SyntaxError: " + message)
 
     yield fail, 'x', 'Unexpected input: \'x\''
-    yield fail, '12', 'Found 2, expected *, +, -'
+    yield fail, '12', 'Found: 2 token, expected one of: *, +, -'
     yield fail, '(', 'Unexpected end of input'
     yield fail, '1+', 'Unexpected end of input'
-    yield fail, ')', 'Found ), expected (, number'
+    yield fail, ')', 'Found: ) token, expected one of: (, number'
     yield fail, '((1+2)+3', 'Unexpected end of input'

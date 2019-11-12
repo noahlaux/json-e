@@ -9,7 +9,7 @@ var {SyntaxError, TemplateError} = require('./error');
 
 let syntaxRuleError = (token, expects) => {
   expects.sort();
-  return new SyntaxError(`Found ${token.value}, expected ${expects.join(', ')}`, token);
+  return new SyntaxError(`Found: ${token.value} token, expected one of: ${expects.join(', ')}`, token);
 };
 
 class PrattParser {
