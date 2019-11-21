@@ -30,11 +30,12 @@ let isEqual = (a, b) =>  {
   return a === b;
 };
 
+//                        ,          ]  
 let parseList = (ctx, separator, terminator) => {
   let list = [];
   if (!ctx.attempt(terminator)) {
     do {
-      list.push(ctx.parse());
+      list.push(ctx.parse(undefined));
     } while (ctx.attempt(separator));
     ctx.require(terminator);
   }
